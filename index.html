@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Для Гозел 💌</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- СЛАЙД 1 -->
+
+    <section class="screen active" id="screen1">
+
+        <div class="card">
+
+            <div class="emoji">💌</div>
+
+            <h1>Гозел, у меня к тебе один вопрос...</h1>
+
+            <p class="question">
+                Ты пойдёшь со мной на свидание? 🌷
+            </p>
+
+            <div class="buttons">
+
+                <button class="yes" onclick="goToDatePage()">
+                    Да ❤️
+                </button>
+
+                <button class="no" id="noButton">
+                    Нет 🙈
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- СЛАЙД 2 -->
+
+    <section class="screen" id="screen2">
+
+        <div class="card">
+
+            <div class="emoji">📅</div>
+
+            <h1>Отлично 💖</h1>
+
+            <p class="question">
+                Тогда выбери дату
+            </p>
+
+            <input type="date" id="datePicker">
+
+            <button class="yes full-button" onclick="saveDate()">
+                Дальше ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- СЛАЙД 3 -->
+
+    <section class="screen" id="screen3">
+
+        <div class="card">
+
+            <div class="emoji">✨</div>
+
+            <h1>Куда хочешь сходить?</h1>
+
+            <p class="question">
+                Выбери один вариант
+            </p>
+
+            <div class="places">
+
+                <button
+                    class="place-button"
+                    onclick="selectPlace('Кафе ☕')">
+
+                    ☕ Кафе
+
+                </button>
+
+
+                <button
+                    class="place-button"
+                    onclick="selectPlace('Кино 🎬')">
+
+                    🎬 Кино
+
+                </button>
+
+
+                <button
+                    class="place-button"
+                    onclick="selectPlace('Прогулка 🌙')">
+
+                    🌙 Прогулка
+
+                </button>
+
+
+                <button
+                    class="place-button"
+                    onclick="selectPlace('Ресторан 🍝')">
+
+                    🍝 Ресторан
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- СЛАЙД 4 -->
+
+    <section class="screen" id="screen4">
+
+        <div class="card final-card">
+
+            <div class="emoji">💖</div>
+
+            <h1>Тогда договорились, Гозел ❤️</h1>
+
+            <p class="final-info" id="finalDate"></p>
+
+            <p class="final-info" id="finalPlace"></p>
+
+            <div class="love-text">
+                Я очень рад, что ты согласилась 🌷
+            </div>
+
+            <div class="big-love">
+                Люблю тебя ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

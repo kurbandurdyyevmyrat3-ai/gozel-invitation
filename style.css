@@ -1,0 +1,341 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb
+    );
+
+    background-size: 300% 300%;
+
+    animation: backgroundMove 8s ease infinite;
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.screen {
+    position: absolute;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateX(100px);
+
+    transition: 0.6s ease;
+}
+
+
+.screen.active {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateX(0);
+}
+
+
+.card {
+    width: 90%;
+    max-width: 430px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.84);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.15);
+
+    animation: cardAppear 0.7s ease;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.emoji {
+    font-size: 70px;
+
+    animation: floating 2s ease-in-out infinite;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+h1 {
+    color: #333;
+
+    font-size: 29px;
+}
+
+
+.question {
+    font-size: 21px;
+
+    color: #555;
+
+    line-height: 1.5;
+}
+
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    min-height: 70px;
+}
+
+
+button {
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.yes {
+    background: #ff4f81;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(255, 79, 129, 0.35);
+}
+
+
+.yes:hover {
+    transform: scale(1.08);
+}
+
+
+.no {
+    background: #eeeeee;
+
+    color: #555;
+
+    position: relative;
+}
+
+
+input[type="date"] {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    border: 2px solid #ffd0dd;
+
+    border-radius: 15px;
+
+    outline: none;
+}
+
+
+.full-button {
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+.places {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.place-button {
+    background: white;
+
+    color: #444;
+
+    padding: 18px 10px;
+
+    border: 2px solid #ffd2df;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+.place-button:hover {
+    transform: translateY(-5px);
+
+    background: #fff3f7;
+}
+
+
+.final-info {
+    font-size: 19px;
+
+    color: #555;
+
+    margin: 15px 0;
+}
+
+
+.love-text {
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    color: #555;
+}
+
+
+.big-love {
+    margin-top: 30px;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    color: #ff4f81;
+
+    animation: pulse 1.3s infinite;
+}
+
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation: flyUp linear forwards;
+}
+
+
+@keyframes flyUp {
+
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .places {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .card {
+        padding: 35px 20px;
+    }
+}
